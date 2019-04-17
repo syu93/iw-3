@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>My first PWA</title>
+  <link rel="manifest" href="manifest.json">
   <!-- <link rel="stylesheet" href="./styles/main.css"> -->
   <style>
     * {
@@ -91,8 +92,19 @@
       }
     }
   </style>
-  <link rel="preload" href="/js/components/card/card.css">
+  <link rel="preload" href="/js/components/card/card.css" as="style">
   <!-- <link rel="stylesheet" href="/js/components/card/card.css"> -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/service-worker.js', {
+          scope: '/'
+        });
+      });
+    } else {
+      console.log('Use another cache method :(');
+    }
+  </script>
 </head>
 <body>
   <section id="app">
@@ -108,12 +120,10 @@
     </main>
   </section>
   <script type="module" src="/js/app.js" async></script>
-  <script async>
-    // Load CardElement CSS
-    const cardStyle = document.createElement('link');
-    cardStyle.href = '/js/components/card/card.css';
-    cardStyle.rel = "stylesheet";
-    document.head.appendChild(cardStyle);
+  <script nomodule>
+    const script = document.createElement('script');
+    script.src = "./js/components/card/card.js";
+    document.head.appendChild(script);
   </script>
 </body>
 </html>

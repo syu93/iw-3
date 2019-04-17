@@ -1,0 +1,23 @@
+{
+  "name": "iw3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "generate": "npx workbox generateSW",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/syu93/iw-3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/syu93/iw-3/issues"
+  },
+  "homepage": "https://github.com/syu93/iw-3#readme",
+  "devDependencies": {
+    "workbox-cli": "^4.2.0"
+  }
+}
