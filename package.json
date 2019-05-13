@@ -18,6 +18,11 @@
   },
   "homepage": "https://github.com/syu93/iw-3#readme",
   "devDependencies": {
+    "polymer-cli": "^1.9.8",
     "workbox-cli": "^4.2.0"
+  },
+  "dependencies": {
+    "idb": "^4.0.3",
+    "lit-element": "^2.1.0"
   }
 }

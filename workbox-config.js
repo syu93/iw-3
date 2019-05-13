@@ -5,7 +5,7 @@ module.exports = {
     "node_modules/**/*",
     "package*",
     "workbox-config.js",
-    "images/**/*",
+    "images/**/*"
   ],
   "runtimeCaching": [{
     "urlPattern": /\.(?:png|gif|jpg|jpeg|svg)$/,
@@ -15,7 +15,11 @@ module.exports = {
     }
   }],
   "globPatterns": [
-    "**/*.{json,jpg,png,html,js,css}"
+    "**/*.{json,jpg,png,html,js,css}",
+    "./node_modules/idb/build/esm/index.js",
+    "./node_modules/idb/build/esm/chunk.js",
+    "./node_modules/lit-element/**/*.js",
+    "./node_modules/lit-html/**/*.js",
   ],
   "swDest": "service-worker.js"
 };

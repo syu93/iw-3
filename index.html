@@ -39,6 +39,7 @@
       padding: 0 16px;
       box-shadow: var(--app-header-shadow);
       z-index: 1;
+      transition: color 0.3s ease, background-color 0.3s ease;
     }
     #app > header nav {
       position: relative;
@@ -92,14 +93,12 @@
       }
     }
   </style>
-  <link rel="preload" href="/js/components/card/card.css" as="style">
-  <!-- <link rel="stylesheet" href="/js/components/card/card.css"> -->
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/service-worker.js', {
-          scope: '/'
-        });
+        // navigator.serviceWorker.register('/service-worker.js', {
+        //   scope: '/'
+        // });
       });
     } else {
       console.log('Use another cache method :(');
@@ -111,6 +110,7 @@
     <header>
       <nav>
         <span class="title"><a href="/">Fast</a></span>
+        <app-theme></app-theme>
       </nav>
     </header>
     <main>
@@ -120,6 +120,7 @@
     </main>
   </section>
   <script type="module" src="/js/app.js" async></script>
+  <script type="module" src="/js/components/app-theme/app-theme.js"></script>
   <script nomodule>
     const script = document.createElement('script');
     script.src = "./js/components/card/card.js";
